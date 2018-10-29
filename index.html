@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.typekit.net/beh8gst.css">
+	<title>Assignment 9</title>
+</head>
+<body>
+	<h1>Assignment 9</h1>
+	<div class="slideshow-container">
+		<div id="header">
+			<h2>TOP TEN HIGHEST GROSSING HORROR MOVIES</h2>
+		</div>
+		<div class="slides">
+		<img src="images/it.jpg">
+		<p id="title">1. IT (2017)</p>
+		<p id="earnings">$327,481,748</p>
+	</div>
+	<div class="slides">
+		<img src="images/sixthsense.jpg">
+		<p id="title">2. The Sixth Sense (1999)</p>
+		<p id="earnings">$293,506,292</p>
+	</div>
+		<div class="slides">
+		<img src="images/exorcist.jpg">
+		<p id="title">3. The Exorcist (1973)</p>
+		<p id="earnings">$232,906,145</p>
+	</div>
+	<div class="slides">
+		<img src="images/quietplace.jpg">
+		<p id="title">4. A Quiet Place (2018)</p>
+		<p id="earnings">$188,024,361</p>
+	</div>
+	<div class="slides">
+		<img src="images/whatliesbeneath.jpg">
+		<p id="title">5. What Lies Beneath (2000)</p>
+		<p id="earnings">$155,464,351</p>
+	</div>
+	<div class="slides">
+		<img src="images/blairwitch.jpg">
+		<p id="title">6. Blair Witch Project (1999)</p>
+		<p id="earnings">$140,539,099</p>
+	</div>
+	<div class="slides">
+		<img src="images/conjuring.jpg">
+		<p id="title">7. The Conjuring (2013)</p>
+		<p id="earnings">$137,400,141</p>
+	</div>
+	<div class="slides">
+		<img src="images/ring.png">
+		<p id="title">8. The Ring (2002)</p>
+		<p id="earnings">$129,128,133</p>
+	</div>
+	<div class="slides">
+		<img src="images/nun.jpg">
+		<p id="title">9. The Nun (2018)</p>
+		<p id="earnings">$116,888,393</p>
+	</div>
+	<div class="slides">
+		<img src="images/grudge.jpg">
+		<p id="title">10. The Grudge (2004)</p>
+		<p id="earnings">$110,359,362</p>
+	</div>
+
+	<a class="previous" onclick="goSlide(-1)">&#x022D8;</a>
+	<a class="next" onclick="goSlide(1)">&#x022D9;</a>
+
+	<div class="circle-container">
+		<span class="circle" onclick="currentSlide(1)"></span>
+		<span class="circle" onclick="currentSlide(2)"></span>
+		<span class="circle" onclick="currentSlide(3)"></span>
+		<span class="circle" onclick="currentSlide(4)"></span>
+		<span class="circle" onclick="currentSlide(5)"></span>
+		<span class="circle" onclick="currentSlide(6)"></span>
+		<span class="circle" onclick="currentSlide(7)"></span>
+		<span class="circle" onclick="currentSlide(8)"></span>
+		<span class="circle" onclick="currentSlide(9)"></span>
+		<span class="circle" onclick="currentSlide(10)"></span>
+	</div>
+</div>
+	
+	<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function goSlide(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  var circle = document.getElementsByClassName("circle");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < circle.length; i++) {
+      circle[i].className = circle[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  circle[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
